@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
 
 const MenuItemSchema = new mongoose.Schema({
-    catagory: String,
+    category: String,
     name: String,
-    price: String
+    price: Number
 })
 
 module.exports = mongoose.model("MenuItem", MenuItemSchema)
