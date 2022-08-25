@@ -8,6 +8,11 @@ const { default: mongoose } = require("mongoose")
 
 const app = express()
 
+// routers 
+const dealsRouter = require("./Controllers/deals")
+const menuItemsRouter = require("./Controllers/menuItems")
+const pizzasRouter = require("./Controllers/pizzas")
+
 // mongo Connection ---------
 mongoose.connect(DATABASE_URL)
 mongoose.connection
@@ -19,6 +24,11 @@ mongoose.connection
 app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
+
+// router urls
+app.use("/api/deals", dealsRouter)
+app.use("/api/menu-items", menuItemsRouter)
+app.use("/api/pizzas", pizzasRouter)
 
 // routes ---------
 // root
