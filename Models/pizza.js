@@ -29,7 +29,8 @@ const PizzaSchema = new mongoose.Schema({
 		onions: Number,
 	    mushrooms: Number,
 		greenPeppers: Number
-    }
+    },
+    price: Number
 })
 
 module.exports = mongoose.model("Pizza", PizzaSchema)
